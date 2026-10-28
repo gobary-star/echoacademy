@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64" role="img" aria-labelledby="t">
+  <title id="t">ECHOTech Academy</title>
+  <!-- Logotipo horizontal para fondos CLAROS. El texto usa fuentes del sistema. -->
+  <g fill="none" stroke="#1764B4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 18V6l13 8M52 18V6L39 14"/>
+    <rect x="10" y="14" width="44" height="40" rx="9" fill="#FFFFFF"/>
+    <path d="M4 26h6M4 34h6M4 42h6M54 26h6M54 34h6M54 42h6"/>
+    <path d="M32 27a9 9 0 0 1 0 14M39 22a16 16 0 0 1 0 24"/>
+  </g>
+  <circle cx="23" cy="34" r="3.5" fill="#10263D"/>
+  <text x="76" y="36" font-family="Inter, Manrope, 'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#10263D" letter-spacing="-0.5">ECHO<tspan fill="#1764B4">Tech</tspan></text>
+  <text x="77" y="54" font-family="Inter, Manrope, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#52677D" letter-spacing="4">ACADEMY</text>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" width="560" height="440" role="img" aria-labelledby="hero-t">
+  <title id="hero-t">Ilustración de un ordenador con un modelo 3D, una placa ESP32 y una protoboard con un LED</title>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#19BAF0" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#19BAF0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12395B"/>
+      <stop offset="1" stop-color="#071523"/>
+    </linearGradient>
+    <pattern id="holes" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="1.8" fill="#9FB4C7"/>
+    </pattern>
+    <pattern id="pins" width="16" height="8" patternUnits="userSpaceOnUse">
+      <rect width="6" height="8" rx="1" fill="#F2C94C"/>
+    </pattern>
+  </defs>
+  <style>
+    .float { animation: float 6s ease-in-out infinite; }
+    .float-b { animation: float 7s ease-in-out -2s infinite; }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; }
+    .flow { stroke-dasharray: 6 8; animation: flow 3s linear infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pulse { 0%,100% { opacity: .45; } 50% { opacity: 1; } }
+    @keyframes flow { to { stroke-dashoffset: -56; } }
+    @media (prefers-reduced-motion: reduce) {
+      .float, .float-b, .pulse, .flow { animation: none; }
+    }
+  </style>
+
+  <ellipse cx="280" cy="220" rx="272" ry="212" fill="url(#glow)"/>
+
+  <!-- Ordenador con modelo 3D -->
+  <rect x="30" y="30" width="330" height="214" rx="16" fill="#0C2034" stroke="#19BAF0" stroke-width="3"/>
+  <rect x="44" y="44" width="302" height="186" rx="8" fill="url(#screen)"/>
+  <g stroke="#19BAF0" stroke-opacity=".16" stroke-width="1">
+    <path d="M44 170H346M44 190H346M44 210H346M44 150H346"/>
+    <path d="M120 150L84 230M195 150V230M270 150L306 230"/>
+  </g>
+  <circle cx="60" cy="58" r="3.5" fill="#19BAF0"/>
+  <circle cx="74" cy="58" r="3.5" fill="#1764B4"/>
+  <circle cx="88" cy="58" r="3.5" fill="#FFFFFF" fill-opacity=".7"/>
+  <g class="float" stroke="#071523" stroke-width="2" stroke-linejoin="round">
+    <polygon points="195,72 245,100 195,128 145,100" fill="#6FD8FB"/>
+    <polygon points="145,100 195,128 195,186 145,158" fill="#19BAF0"/>
+    <polygon points="195,128 245,100 245,158 195,186" fill="#1764B4"/>
+  </g>
+  <path d="M170 244h50l10 34H160z" fill="#0C2034" stroke="#19BAF0" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="130" y="276" width="130" height="10" rx="5" fill="#0C2034" stroke="#19BAF0" stroke-width="3"/>
+
+  <!-- Microchip flotante y resistencia -->
+  <path d="M360 100H402" stroke="#19BAF0" stroke-width="3" stroke-linecap="round" class="flow" stroke-opacity=".8"/>
+  <g class="float-b">
+    <rect x="410" y="70" width="64" height="64" rx="8" fill="#0C2034" stroke="#19BAF0" stroke-width="3"/>
+    <path d="M424 62v8M442 62v8M460 62v8M424 134v8M442 134v8M460 134v8M402 84h8M402 102h8M402 120h8M474 84h8M474 102h8M474 120h8" stroke="#19BAF0" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="442" cy="102" r="11" fill="#19BAF0" fill-opacity=".85"/>
+  </g>
+  <g>
+    <path d="M392 204H412M468 204H488" stroke="#9FB4C7" stroke-width="3" stroke-linecap="round"/>
+    <rect x="412" y="194" width="56" height="20" rx="10" fill="#E8C39E"/>
+    <rect x="424" y="194" width="5" height="20" fill="#7A4A2B"/>
+    <rect x="436" y="194" width="5" height="20" fill="#2B2B2B"/>
+    <rect x="448" y="194" width="5" height="20" fill="#C0392B"/>
+  </g>
+
+  <!-- Protoboard con LED y resistencia -->
+  <rect x="300" y="290" width="230" height="122" rx="12" fill="#F5F9FD" stroke="#C7D6E6" stroke-width="2"/>
+  <path d="M314 301H516" stroke="#E5484D" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M314 401H516" stroke="#1764B4" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="314" y="310" width="202" height="34" fill="url(#holes)"/>
+  <rect x="300" y="346" width="230" height="8" fill="#DCE6F0"/>
+  <rect x="314" y="356" width="202" height="34" fill="url(#holes)"/>
+  <circle class="pulse" cx="400" cy="326" r="24" fill="#FF6B8B" fill-opacity=".35"/>
+  <path d="M392 340v-14a8 8 0 0 1 16 0v14z" fill="#FF6B8B"/>
+  <path d="M396 340v14M404 340v14" stroke="#9FB4C7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M450 372h40" stroke="#9FB4C7" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="458" y="366" width="24" height="12" rx="6" fill="#E8C39E"/>
+  <rect x="464" y="366" width="3" height="12" fill="#7A4A2B"/>
+  <rect x="470" y="366" width="3" height="12" fill="#2B2B2B"/>
+
+  <!-- Placa ESP32 -->
+  <rect x="40" y="290" width="212" height="122" rx="10" fill="#0B3A5C" stroke="#19BAF0" stroke-width="2.5"/>
+  <rect x="28" y="334" width="20" height="32" rx="3" fill="#9FB4C7"/>
+  <rect x="56" y="294" width="192" height="8" fill="url(#pins)"/>
+  <rect x="56" y="400" width="192" height="8" fill="url(#pins)"/>
+  <rect x="78" y="318" width="92" height="64" rx="4" fill="#D5DEE8"/>
+  <text x="124" y="356" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="800" fill="#0B3A5C">ESP32</text>
+  <path d="M180 366h12v-28h10v28h10v-28h10v28h10v-28h10v28h6" fill="none" stroke="#19BAF0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="pulse" cx="66" cy="392" r="3.5" fill="#19BAF0"/>
+
+  <!-- Cables entre la placa y la protoboard -->
+  <path d="M252 334C286 334 288 322 322 322" fill="none" stroke="#19BAF0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M252 372C290 372 290 372 322 372" fill="none" stroke="#E6F6FD" stroke-width="3" stroke-linecap="round" stroke-opacity=".9"/>
+  <path d="M252 334C286 334 288 322 322 322" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" class="flow"/>
+
+  <circle cx="520" cy="60" r="3" fill="#19BAF0" fill-opacity=".5"/>
+  <circle cx="500" cy="250" r="2.5" fill="#FFFFFF" fill-opacity=".4"/>
+  <circle cx="22" cy="270" r="2.5" fill="#19BAF0" fill-opacity=".5"/>
+</svg>
