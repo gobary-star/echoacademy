@@ -13,17 +13,15 @@
   <meta property="og:locale" content="es_PA">
   <meta property="og:title" content="ECHOTech Academy | Clases de tecnología para niños">
   <meta property="og:description" content="Clases presenciales de electrónica, informática básica, diseño 3D y Arduino y ESP32 para niños. Consulta los cursos y precios de ECHOTech Academy.">
-  <!-- Cuando tengas la URL pública, descomenta y completa estas líneas (ver README):
-  <link rel="canonical" href="https://TU_USUARIO.github.io/echotech-academy/">
-  <meta property="og:url" content="https://TU_USUARIO.github.io/echotech-academy/">
-  -->
 
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
   <!-- Activa los estilos de animación solo si JavaScript funciona -->
   <script>document.documentElement.classList.add("js");</script>
 </head>
+
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
@@ -31,7 +29,7 @@
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="ECHOTech Academy, ir al inicio">
-        <img src="assets/images/logo-mark-dark.svg" width="40" height="40" alt="" aria-hidden="true">
+        <img src="logo-mark-dark.svg" width="40" height="40" alt="" aria-hidden="true">
         <span class="brand-name">ECHO<span>Tech</span><small>Academy</small></span>
       </a>
 
@@ -42,6 +40,7 @@
           <span class="bar" aria-hidden="true"></span>
           <span class="bar" aria-hidden="true"></span>
         </button>
+
         <ul class="nav-menu" id="nav-menu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#cursos">Cursos</a></li>
@@ -64,10 +63,12 @@
           <h1 id="hero-title">ECHO<span>Tech</span> Academy</h1>
           <p class="hero-tagline">Pequeños hoy, grandes creadores mañana.</p>
           <p class="hero-desc">Clases prácticas para descubrir la tecnología, desarrollar la creatividad y aprender construyendo proyectos paso a paso.</p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#cursos">Explorar cursos</a>
             <a class="btn btn-ghost" href="#contacto">Consultar clases</a>
           </div>
+
           <ul class="hero-facts" aria-label="Datos rápidos">
             <li>Clases presenciales</li>
             <li>90 minutos por clase</li>
@@ -75,8 +76,9 @@
             <li>Pago presencial</li>
           </ul>
         </div>
+
         <div class="hero-visual">
-          <img src="assets/images/hero-illustration.svg" width="560" height="440" fetchpriority="high"
+          <img src="hero-illustration.svg" width="560" height="440" fetchpriority="high"
                alt="Ilustración de un ordenador que muestra un cubo 3D, junto a una placa ESP32 y una protoboard con un LED">
         </div>
       </div>
@@ -92,13 +94,18 @@
         </div>
 
         <div class="course-grid">
+
           <article class="course-card course-card--1 reveal">
             <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2 4 14h7l-1 8 9-12h-7z"/>
+              </svg>
             </div>
+
             <h3>Electrónica</h3>
             <p>Descubre cómo funcionan los componentes electrónicos, aprende a interpretar circuitos sencillos y comprende los fundamentos de la electricidad mediante actividades prácticas y seguras.</p>
             <p class="topics-label">Temas orientativos</p>
+
             <ul class="topics">
               <li>Resistencias, LED y diodos</li>
               <li>Capacitores y protoboards</li>
@@ -106,16 +113,22 @@
               <li>Alimentación y polaridad</li>
               <li>Uso introductorio del multímetro</li>
             </ul>
+
             <a class="btn btn-outline" href="#contacto" data-curso="electronica" aria-label="Consultar este curso: Electrónica">Consultar este curso</a>
           </article>
 
           <article class="course-card course-card--2 reveal">
             <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="12" rx="2"/>
+                <path d="M8 20h8M12 16v4"/>
+              </svg>
             </div>
+
             <h3>Informática básica</h3>
             <p>Aprende los fundamentos del uso del ordenador y desarrolla habilidades digitales útiles para estudiar, crear y resolver problemas.</p>
             <p class="topics-label">Temas orientativos</p>
+
             <ul class="topics">
               <li>Partes del ordenador</li>
               <li>Sistema operativo</li>
@@ -123,16 +136,22 @@
               <li>Navegación segura por Internet</li>
               <li>Hardware y software</li>
             </ul>
+
             <a class="btn btn-outline" href="#contacto" data-curso="informatica" aria-label="Consultar este curso: Informática básica">Consultar este curso</a>
           </article>
 
           <article class="course-card course-card--3 reveal">
             <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2 3 7v10l9 5 9-5V7z"/>
+                <path d="M3 7l9 5 9-5M12 12v10"/>
+              </svg>
             </div>
+
             <h3>Diseño 3D</h3>
             <p>Transforma ideas en modelos tridimensionales y descubre cómo diseñar objetos utilizando herramientas digitales.</p>
             <p class="topics-label">Temas orientativos</p>
+
             <ul class="topics">
               <li>Conceptos de modelado 3D</li>
               <li>Formas geométricas</li>
@@ -140,16 +159,23 @@
               <li>Construcción de modelos sencillos</li>
               <li>Herramientas de edición</li>
             </ul>
+
             <a class="btn btn-outline" href="#contacto" data-curso="diseno-3d" aria-label="Consultar este curso: Diseño 3D">Consultar este curso</a>
           </article>
 
           <article class="course-card course-card--4 reveal">
             <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="6" width="12" height="12" rx="2"/>
+                <rect x="9.5" y="9.5" width="5" height="5" rx="1"/>
+                <path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>
+              </svg>
             </div>
+
             <h3>Arduino y ESP32</h3>
             <p>Descubre cómo programar microcontroladores y conectar sensores, luces y otros componentes para desarrollar proyectos electrónicos interactivos.</p>
             <p class="topics-label">Temas orientativos</p>
+
             <ul class="topics">
               <li>Introducción a Arduino y ESP32</li>
               <li>Entradas y salidas digitales</li>
@@ -157,8 +183,10 @@
               <li>Lectura de sensores</li>
               <li>Programación introductoria</li>
             </ul>
+
             <a class="btn btn-outline" href="#contacto" data-curso="arduino-esp32" aria-label="Consultar este curso: Arduino y ESP32">Consultar este curso</a>
           </article>
+
         </div>
 
         <p class="courses-note reveal">Los contenidos se adaptan al nivel del estudiante. Los temas indicados son ejemplos orientativos, no un programa oficial certificado.</p>
@@ -179,22 +207,27 @@
             <h3>Aprendizaje paso a paso</h3>
             <p>De lo sencillo a lo complejo, a un ritmo cómodo.</p>
           </li>
+
           <li class="reveal">
             <h3>Creatividad y experimentación</h3>
             <p>Probar, equivocarse y volver a intentar es parte de aprender.</p>
           </li>
+
           <li class="reveal">
             <h3>Resolución de problemas</h3>
             <p>Pensar cómo resolver un reto antes de buscar la respuesta.</p>
           </li>
+
           <li class="reveal">
             <h3>Introducción responsable a la tecnología</h3>
             <p>Usar la tecnología con criterio y de forma segura.</p>
           </li>
+
           <li class="reveal">
             <h3>Desarrollo de habilidades digitales</h3>
             <p>Competencias útiles para estudiar, crear y comunicarse.</p>
           </li>
+
           <li class="reveal">
             <h3>Aprendizaje adaptado al nivel del estudiante</h3>
             <p>Los contenidos se ajustan a lo que cada niño ya sabe.</p>
@@ -319,6 +352,7 @@
           <span class="eyebrow">Contacto</span>
           <h2 id="contacto-title">Comienza tu aventura tecnológica</h2>
           <p>Escríbenos para consultar los cursos y recibir información sobre las clases.</p>
+
           <ol class="contact-steps">
             <li>Elige el curso que te interesa y escribe tu consulta.</li>
             <li>Se abrirá tu aplicación de correo con el mensaje ya preparado.</li>
@@ -328,7 +362,7 @@
 
         <div class="form-card reveal">
           <div class="admin-notice" id="admin-notice" hidden>
-            <strong>Aviso para el administrador:</strong> el correo de la academia todavía no está configurado. Abre el archivo <code>js/config.js</code> y reemplaza <code>TU_CORREO_AQUI</code> por el correo real. Mientras tanto, el formulario no podrá preparar mensajes.
+            <strong>Aviso para el administrador:</strong> el correo de la academia todavía no está configurado. Abre el archivo <code>config.js</code> y reemplaza <code>TU_CORREO_AQUI</code> por el correo real. Mientras tanto, el formulario no podrá preparar mensajes.
           </div>
 
           <form id="contact-form" novalidate>
@@ -393,7 +427,7 @@
       <div class="footer-grid">
         <div>
           <a class="brand" href="#inicio" aria-label="ECHOTech Academy, ir al inicio">
-            <img src="assets/images/logo-mark-dark.svg" width="40" height="40" alt="" aria-hidden="true" loading="lazy">
+            <img src="logo-mark-dark.svg" width="40" height="40" alt="" aria-hidden="true" loading="lazy">
             <span class="brand-name">ECHO<span>Tech</span><small>Academy</small></span>
           </a>
           <p class="footer-tagline">Aprende. Crea. Innova.</p>
@@ -429,7 +463,7 @@
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script src="config.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
