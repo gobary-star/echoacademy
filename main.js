@@ -9,6 +9,9 @@
 (function () {
   "use strict";
 
+  // Activa mejoras visuales solo cuando este archivo se ha cargado.
+  document.documentElement.classList.add("js");
+
   /* ---------- Utilidades ---------- */
   var PLACEHOLDER_EMAIL = "TU_CORREO_AQUI";
   var EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -181,6 +184,7 @@
 
   /* ---------- Formulario de contacto ---------- */
   var FIELDS = ["nombre", "correo", "curso", "mensaje"];
+  var VALID_COURSES = ["electronica", "informatica", "diseno-3d", "arduino-esp32", "general"];
 
   function setError(id, message) {
     var field = qs("#" + id);
@@ -212,6 +216,7 @@
     }
     if (id === "curso") {
       if (value === "") return "Elige un curso o «Consulta general».";
+      if (VALID_COURSES.indexOf(value) === -1) return "Selecciona un curso válido.";
     }
     if (id === "mensaje") {
       if (value === "") return "Escribe tu mensaje.";
