@@ -4,7 +4,7 @@
  * Cada función hace una sola cosa. Al final del archivo se
  * llaman todas cuando la página está lista.
  *
- * Requiere js/config.js (define la constante ACADEMY_EMAIL).
+ * Requiere config.js (define la constante ACADEMY_EMAIL).
  */
 (function () {
   "use strict";
