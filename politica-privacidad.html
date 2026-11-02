@@ -4,20 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071523">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <meta name="description" content="Información sobre los datos que utiliza la página web de ECHOTech Academy.">
   <title>Política de privacidad | ECHOTech Academy</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .legal { padding: 72px 0 88px; }
-    .legal h1 { margin: 12px 0 8px; font-size: clamp(2.2rem, 5vw, 3.4rem); }
-    .legal h2 { margin: 34px 0 10px; font-size: 1.35rem; }
-    .legal p { max-width: 760px; color: var(--muted); }
-    .legal-date { font-size: .9rem; margin-bottom: 30px; }
-    .legal-note { margin-top: 34px; padding: 18px; border-left: 3px solid var(--cyan); background: #eaf5fb; border-radius: 0 12px 12px 0; }
-    .legal-header { position: static; height: auto; padding: 14px 0; }
-  </style>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -62,15 +56,13 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+  <footer class="site-footer legal-footer">
+    <div class="container footer-bottom legal-footer-bottom">
       <p>© <span id="year">2026</span> ECHOTech Academy. Todos los derechos reservados.</p>
-      <p><a href="index.html" style="color:#d6e4f0">Volver al inicio</a></p>
+      <p><a href="index.html" class="footer-privacy-link">Volver al inicio</a></p>
     </div>
   </footer>
-  <script>
-    var year = document.getElementById("year");
-    if (year) year.textContent = String(new Date().getFullYear());
-  </script>
+  <script src="config.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
