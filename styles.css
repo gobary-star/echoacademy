@@ -1365,3 +1365,234 @@ html:not(.js) .hero {
 .footer-privacy-link {
   color: #d6e4f0;
 }
+
+
+/* Esquemas de ejemplo: galería técnica con trazos animados */
+.schematics-section {
+  position: relative;
+  overflow: hidden;
+  color: #edf7ff;
+  background:
+    radial-gradient(ellipse at 85% 12%, rgba(25, 186, 240, 0.13), transparent 34%),
+    linear-gradient(180deg, #071523 0%, #091b2b 100%);
+}
+
+.schematics-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: linear-gradient(rgba(105, 177, 215, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(105, 177, 215, 0.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
+}
+
+.schematics-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.schematics-intro {
+  max-width: 720px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.schematics-intro h2 {
+  margin: 12px 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.045em;
+}
+
+.schematics-intro > p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #b8c9da;
+  font-size: 1.05rem;
+}
+
+.schematics-caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  color: #8eaabd;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 14px rgba(25, 186, 240, 0.9);
+}
+
+.schematic-list {
+  display: grid;
+  gap: 24px;
+}
+
+.schematic-card {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(20px, 4vw, 38px);
+  overflow: hidden;
+  background: linear-gradient(120deg, rgba(16, 43, 69, 0.92), rgba(8, 25, 41, 0.94));
+  border: 1px solid rgba(117, 190, 225, 0.17);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+}
+
+.schematic-copy {
+  max-width: 420px;
+}
+
+.schematic-index {
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.schematic-copy h3 {
+  margin: 13px 0 10px;
+  color: #f4faff;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+
+.schematic-copy p {
+  margin: 0;
+  color: #b8c9da;
+  line-height: 1.7;
+}
+
+.schematic-tag {
+  display: inline-flex;
+  margin-top: 20px;
+  padding: 7px 11px;
+  color: #a8eaff;
+  background: rgba(25, 186, 240, 0.09);
+  border: 1px solid rgba(25, 186, 240, 0.22);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.schematic-canvas {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 220px;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, rgba(25, 186, 240, 0.08), transparent 68%);
+  border: 1px solid rgba(117, 190, 225, 0.12);
+  border-radius: 16px;
+}
+
+.schematic-canvas svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  max-height: 280px;
+  overflow: visible;
+}
+
+.schematic-canvas svg text {
+  fill: #c8e5f5;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.schematic-canvas svg .svg-note {
+  fill: #7295aa;
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.schematic-canvas .draw-line {
+  fill: none;
+  stroke: #35c6f2;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.schematic-card.is-visible .draw-line {
+  stroke-dashoffset: 0;
+}
+
+.schematic-canvas .schematic-node {
+  fill: #071523;
+  stroke: #8ce5ff;
+  stroke-width: 2;
+}
+
+.canvas-glow {
+  position: absolute;
+  inset: auto 12% 8px;
+  height: 22px;
+  background: rgba(25, 186, 240, 0.18);
+  filter: blur(24px);
+  border-radius: 50%;
+}
+
+.schematics-footnote {
+  max-width: 760px;
+  margin: 28px auto 0;
+  color: #809db0;
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .schematic-card {
+    grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr);
+    gap: 42px;
+    min-height: 330px;
+  }
+
+  .schematic-card-reverse .schematic-copy {
+    order: 2;
+  }
+
+  .schematic-card-reverse .schematic-canvas {
+    order: 1;
+  }
+
+  .schematic-canvas {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schematic-canvas {
+    min-height: 170px;
+  }
+
+  .schematic-canvas svg text {
+    font-size: 11px;
+  }
+
+  .schematic-canvas svg .svg-note {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schematic-canvas .draw-line {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
