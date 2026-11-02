@@ -6,6 +6,9 @@
   <title>ECHOTech Academy | Clases de tecnología para niños</title>
   <meta name="description" content="Clases presenciales de electrónica, informática básica, diseño 3D y Arduino y ESP32 para niños. Consulta los cursos y precios de ECHOTech Academy.">
   <meta name="theme-color" content="#071523">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
   <!-- Open Graph (vista previa al compartir el enlace) -->
   <meta property="og:type" content="website">
@@ -18,8 +21,6 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Activa los estilos de animación solo si JavaScript funciona -->
-  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
@@ -376,7 +377,7 @@
             <strong>Aviso para el administrador:</strong> el correo de la academia todavía no está configurado. Abre el archivo <code>config.js</code> y reemplaza <code>TU_CORREO_AQUI</code> por el correo real. Mientras tanto, el formulario no podrá preparar mensajes.
           </div>
 
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="mailto:jeanvillartch09@proton.me" method="post" enctype="text/plain">
             <div class="field">
               <label for="nombre">Nombre del padre, madre o tutor</label>
               <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="nombre-error" maxlength="80">
@@ -469,7 +470,7 @@
 
       <div class="footer-bottom">
         <p>© <span id="year">2026</span> ECHOTech Academy. Todos los derechos reservados.</p>
-        <p>Esta web no incluye rastreadores publicitarios ni analítica. <a href="politica-privacidad.html" style="color:#d6e4f0">Política de privacidad</a></p>
+        <p>Esta web no incluye rastreadores publicitarios ni analítica. <a href="politica-privacidad.html" class="footer-privacy-link">Política de privacidad</a></p>
       </div>
     </div>
   </footer>
