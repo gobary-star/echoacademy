@@ -431,6 +431,110 @@
         </div>
       </div>
     </section>
+
+    <!-- ============ ESQUEMAS DE EJEMPLO ============ -->
+    <section class="section schematics-section" id="esquemas" aria-labelledby="schematics-title">
+      <div class="container">
+        <div class="schematics-intro reveal">
+          <span class="eyebrow">Del concepto al proyecto</span>
+          <h2 id="schematics-title">Esquemas de ejemplo</h2>
+          <p>Las ideas empiezan con unas líneas. Explora cómo se conectan los componentes antes de construir algo real.</p>
+          <span class="schematics-caption"><span class="live-dot" aria-hidden="true"></span> Diagramas ilustrativos · Desplázate para descubrirlos</span>
+        </div>
+
+        <div class="schematic-list">
+          <article class="schematic-card reveal">
+            <div class="schematic-copy">
+              <span class="schematic-index">01 / ELECTRÓNICA</span>
+              <h3>Un LED que se enciende</h3>
+              <p>Una fuente de baja tensión, una resistencia que limita la corriente y un LED conectado con la polaridad correcta.</p>
+              <span class="schematic-tag">Circuito básico</span>
+            </div>
+            <div class="schematic-canvas">
+              <svg viewBox="0 0 560 250" role="img" aria-labelledby="led-title led-desc">
+                <title id="led-title">Esquema ilustrativo de un LED con resistencia</title>
+                <desc id="led-desc">Un circuito sencillo en serie con una fuente, una resistencia y un LED.</desc>
+                <path class="draw-line" pathLength="1" d="M80 125 H145 M215 125 H270 M340 125 H455 V205 H80 V125"/>
+                <path class="draw-line" pathLength="1" d="M145 105 L145 145 L215 145 L215 105 Z"/>
+                <path class="draw-line" pathLength="1" d="M270 105 L310 125 L270 145 Z M310 105 V145"/>
+                <path class="draw-line" pathLength="1" d="M287 91 L309 69 M301 68 L309 69 L308 77 M315 104 L337 82 M329 81 L337 82 L336 90"/>
+                <path class="draw-line" pathLength="1" d="M80 105 V145 M65 113 H95 M70 137 H90"/>
+                <circle class="schematic-node" cx="80" cy="125" r="5"/>
+                <circle class="schematic-node" cx="455" cy="125" r="5"/>
+                <text x="80" y="88" text-anchor="middle">3.3–5 V</text>
+                <text x="180" y="88" text-anchor="middle">Resistencia</text>
+                <text x="305" y="178" text-anchor="middle">LED</text>
+                <text x="455" y="105" text-anchor="middle">+</text>
+                <text x="80" y="178" text-anchor="middle">−</text>
+                <text class="svg-note" x="280" y="235" text-anchor="middle">Representación conceptual, no escala real</text>
+              </svg>
+              <span class="canvas-glow" aria-hidden="true"></span>
+            </div>
+          </article>
+
+          <article class="schematic-card schematic-card-reverse reveal">
+            <div class="schematic-copy">
+              <span class="schematic-index">02 / MICROCONTROLADORES</span>
+              <h3>Un sensor conectado a ESP32</h3>
+              <p>El sensor recibe alimentación y envía una señal a una entrada del microcontrolador para que el programa pueda interpretarla.</p>
+              <span class="schematic-tag">Entradas y señales</span>
+            </div>
+            <div class="schematic-canvas">
+              <svg viewBox="0 0 560 250" role="img" aria-labelledby="esp-title esp-desc">
+                <title id="esp-title">Diagrama de bloques de un sensor conectado a ESP32</title>
+                <desc id="esp-desc">Un sensor se conecta a alimentación, tierra y una entrada de señal de una placa ESP32.</desc>
+                <rect class="draw-line" x="45" y="70" width="145" height="112" rx="12"/>
+                <rect class="draw-line" x="365" y="55" width="150" height="142" rx="12"/>
+                <path class="draw-line" pathLength="1" d="M190 98 H365 M190 126 H365 M190 154 H365"/>
+                <path class="draw-line" pathLength="1" d="M110 45 V70 M430 30 V55"/>
+                <circle class="schematic-node" cx="190" cy="98" r="5"/>
+                <circle class="schematic-node" cx="190" cy="126" r="5"/>
+                <circle class="schematic-node" cx="190" cy="154" r="5"/>
+                <circle class="schematic-node" cx="365" cy="98" r="5"/>
+                <circle class="schematic-node" cx="365" cy="126" r="5"/>
+                <circle class="schematic-node" cx="365" cy="154" r="5"/>
+                <text x="117" y="112" text-anchor="middle">SENSOR</text>
+                <text x="117" y="134" text-anchor="middle" class="svg-note">Módulo</text>
+                <text x="440" y="112" text-anchor="middle">ESP32</text>
+                <text x="440" y="134" text-anchor="middle" class="svg-note">GPIO</text>
+                <text x="278" y="87" text-anchor="middle">VCC</text>
+                <text x="278" y="116" text-anchor="middle">SEÑAL</text>
+                <text x="278" y="145" text-anchor="middle">GND</text>
+                <text x="110" y="35" text-anchor="middle">Alimentación</text>
+                <text x="430" y="20" text-anchor="middle">Control</text>
+                <text class="svg-note" x="280" y="230" text-anchor="middle">Verifica siempre el voltaje y el pinout del módulo</text>
+              </svg>
+              <span class="canvas-glow" aria-hidden="true"></span>
+            </div>
+          </article>
+
+          <article class="schematic-card reveal">
+            <div class="schematic-copy">
+              <span class="schematic-index">03 / DISEÑO 3D</span>
+              <h3>Un objeto, capa por capa</h3>
+              <p>Un modelo digital se divide en capas para preparar su fabricación. Cada contorno ayuda a construir la forma final.</p>
+              <span class="schematic-tag">Fabricación digital</span>
+            </div>
+            <div class="schematic-canvas">
+              <svg viewBox="0 0 560 250" role="img" aria-labelledby="print-title print-desc">
+                <title id="print-title">Capas ilustrativas de un modelo 3D</title>
+                <desc id="print-desc">Un objeto geométrico formado por varias capas horizontales apiladas.</desc>
+                <path class="draw-line" pathLength="1" d="M165 175 L280 115 L395 175 L280 235 Z"/>
+                <path class="draw-line" pathLength="1" d="M165 145 L280 85 L395 145 L280 205 Z"/>
+                <path class="draw-line" pathLength="1" d="M165 115 L280 55 L395 115 L280 175 Z"/>
+                <path class="draw-line" pathLength="1" d="M165 85 L280 25 L395 85 L280 145 Z"/>
+                <path class="draw-line" pathLength="1" d="M165 85 V175 M280 145 V235 M395 85 V175"/>
+                <path class="draw-line" pathLength="1" d="M420 85 H470 M420 115 H485 M420 145 H470 M420 175 H485"/>
+                <text x="480" y="68" text-anchor="middle">Capas</text>
+                <text class="svg-note" x="280" y="245" text-anchor="middle">Vista conceptual de un modelo laminado</text>
+              </svg>
+              <span class="canvas-glow" aria-hidden="true"></span>
+            </div>
+          </article>
+        </div>
+        <p class="schematics-footnote">Estos dibujos son ejemplos educativos simplificados. Antes de montar un circuito, comprueba sus componentes, conexiones y alimentación.</p>
+      </div>
+    </section>
   </main>
 
   <!-- ============ PIE DE PÁGINA ============ -->
