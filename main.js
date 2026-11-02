@@ -298,6 +298,9 @@
     var form = qs("#contact-form");
     if (!form) return;
 
+    // Usa nuestra validación accesible; sin JavaScript se conserva la validación nativa del navegador.
+    form.noValidate = true;
+
     // Aviso para el administrador si falta configurar el correo
     var notice = qs("#admin-notice");
     if (notice && !getAcademyEmail()) notice.hidden = false;
