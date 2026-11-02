@@ -1347,3 +1347,21 @@ html:not(.js) .hero {
   color: #b8c9da;
   font-size: 0.96rem;
 }
+
+
+/* Seguridad y presentación de páginas legales */
+.legal-header {
+  position: static;
+  height: auto;
+  padding: 14px 0;
+}
+
+.legal-footer-bottom {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.footer-privacy-link {
+  color: #d6e4f0;
+}
