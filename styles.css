@@ -1272,3 +1272,78 @@ html:not(.js) .hero {
     transform: none;
   }
 }
+
+
+/* Equipo de ECHOTech Academy ----------------------------- */
+.team-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.team-heading {
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.team-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.team-heading h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  font-weight: 800;
+}
+
+.team-heading > p {
+  color: #b8c9da;
+}
+
+.team-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.team-card {
+  position: relative;
+  min-width: 0;
+  padding: 26px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #102b45, #0c2034);
+  border: 1px solid rgba(25, 186, 240, 0.22);
+  border-radius: var(--radius);
+}
+
+.team-number {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: rgba(25, 186, 240, 0.22);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.team-role {
+  margin-bottom: 10px;
+  color: var(--cyan);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.team-card h4 {
+  max-width: 280px;
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.team-card > p:last-child {
+  margin: 0;
+  color: #b8c9da;
+  font-size: 0.96rem;
+}
