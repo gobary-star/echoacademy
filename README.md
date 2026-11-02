@@ -56,6 +56,12 @@ python -m http.server 8000
 
 Luego visita http://localhost:8000.
 
+Para ejecutar las comprobaciones automáticas (requiere Node.js, sin instalar dependencias):
+
+```bash
+node scripts/check-site.mjs
+```
+
 ## Publicación
 
 El proyecto no necesita compilación, dependencias ni servidor: basta con publicar los archivos manteniendo esta estructura.
