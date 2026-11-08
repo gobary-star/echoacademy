@@ -1813,3 +1813,43 @@ html:not(.js) .hero {
     padding: 21px;
   }
 }
+
+/* Ajustes táctiles: evita estados hover pegados en móviles */
+@media (hover: none) {
+  .course-card:hover,
+  .welcome-card:hover,
+  .team-card:hover,
+  .price-card:hover,
+  .form-card:hover,
+  .btn:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+}
+
+/* Mejor lectura y destino visible al navegar por anclas */
+section[id] {
+  scroll-margin-top: calc(var(--header-h) + 18px);
+}
+
+.section-head h2,
+.welcome-intro h2,
+.schematics-intro h2 {
+  text-wrap: balance;
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding-inline: 16px;
+  }
+
+  .form-card {
+    padding-inline: 16px;
+  }
+}
+
