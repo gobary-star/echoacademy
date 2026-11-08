@@ -78,7 +78,7 @@ check("Correo y privacidad coinciden con la configuración", () => {
   assert.ok(privacy.includes(match[1]), "La política no coincide con el correo de configuración");
 });
 check("No hay enlaces HTTP inseguros codificados", () => {
-  assert.doesNotMatch(html + privacy + css + js, /https?:\/\//i);
+  assert.doesNotMatch(html + privacy + css + js, /http:\/\//i);
 });
 
 console.log(`ECHOTech Academy: ${checks.length}/${checks.length} comprobaciones superadas`);
