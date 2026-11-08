@@ -51,42 +51,36 @@ check("Política CSP presente y restringida", () => {
 });
 check("CSP permite Google Maps solo como contenido incrustado", () => {
   const policy = html.match(/Content-Security-Policy" content="([^"]+)"/i)?.[1] || "";
-  const frameSrc = policy.match(/(?:^|;)\\s*frame-src\\s+([^;]+)/i)?.[1] || "";
-  const allowedFrames = frameSrc.trim().split(/\\s+/);
-  assert.ok(allowedFrames.includes("https://www.google.com"), "Falta permitir www.google.com para el mapa");
-  assert.ok(allowedFrames.includes("https://maps.google.com"), "Falta permitir maps.google.com para el mapa");
-  assert.ok(!allowedFrames.includes("*"), "No se permite comodín en frame-src");
-  assert.ok(
-    html.includes('src="https://maps.google.com/maps?output=embed&amp;q='),
-    "No se encontró la URL estándar de Google Maps incrustada"
-  );
-  assert.match(html, /<iframe[\\s\\S]*?title="[^"]+"[\\s\\S]*?src="https:\\/\\/maps\\.google\\.com\\/maps\\?/i);
+  const frameSrc = policy.match(/(?:^|;)\s*frame-src\s+([^;]+)/i)?.[1] || "";
+  const allowedFrames = frameSrc.trim().split(/\s+/);
+  assert.ok(allowedFrames.includes("https://www.google.com"), "Falta www.google.com en frame-src");
+  assert.ok(allowedFrames.includes("https://maps.google.com"), "Falta maps.google.com en frame-src");
+  assert.ok(!allowedFrames.includes("*"), "frame-src no debe permitir todos los dominios");
+  assert.match(html, /<iframe\b[^>]*title="Google Maps:[^"]+"[^>]*src="https:\/\/maps\.google\.com\/maps\?output=embed&amp;q=/i);
   assert.match(privacy, /Google Maps/);
   assert.ok(privacy.includes("policies.google.com/privacy"));
 });
-check("Los enlaces externos tienen protección al abrir pestañas", () => {
+check("Los enlaces externos que abren pestañas están protegidos", () => {
   for (const [name, source] of Object.entries({ html, privacy })) {
-    for (const tag of source.match(/<a\\b[^>]*>/gi) || []) {
-      const href = tag.match(/\\bhref="([^"]+)"/i)?.[1] || "";
-      const targetBlank = /\\btarget="_blank"/i.test(tag);
-      const external = /^https:\\/\\//i.test(href);
-      if (targetBlank || external && targetBlank) {
-        const rel = tag.match(/\\brel="([^"]+)"/i)?.[1] || "";
-        assert.ok(rel.split(/\\s+/i).includes("noopener"), `${name}: enlace externo sin noopener: ${href}`);
-        assert.ok(rel.split(/\\s+/i).includes("noreferrer"), `${name}: enlace externo sin noreferrer: ${href}`);
-      }
+    for (const tag of source.match(/<a\b[^>]*>/gi) || []) {
+      if (!/\btarget="_blank"/i.test(tag)) continue;
+      const href = tag.match(/\bhref="([^"]+)"/i)?.[1] || "";
+      const rel = (tag.match(/\brel="([^"]+)"/i)?.[1] || "").toLowerCase().split(/\s+/);
+      assert.ok(/^https:\/\//i.test(href), `${name}: target blank debe ser un enlace HTTPS: ${href}`);
+      assert.ok(rel.includes("noopener"), `${name}: falta noopener en ${href}`);
+      assert.ok(rel.includes("noreferrer"), `${name}: falta noreferrer en ${href}`);
     }
   }
 });
-check("Todos los enlaces de ancla apuntan a IDs existentes", () => {
+check("Todos los enlaces de ancla locales apuntan a IDs existentes", () => {
   for (const [name, source] of Object.entries({ html, privacy })) {
-    const ids = new Set([...source.matchAll(/\\bid="([^"]+)"/g)].map((m) => m[1]));
-    for (const match of source.matchAll(/\\bhref="([^"]*#[^"]+)"/g)) {
+    const ids = new Set([...source.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
+    for (const match of source.matchAll(/\bhref="([^"]*#[^"]+)"/g)) {
       const href = match[1];
+      const page = href.slice(0, href.lastIndexOf("#"));
+      if (page && !/^(?:index\.html|politica-privacidad\.html)?$/i.test(page)) continue;
       const fragment = href.slice(href.lastIndexOf("#") + 1);
       if (!fragment) continue;
-      const page = href.slice(0, href.lastIndexOf("#"));
-      if (page && !/^(?:index\\.html|politica-privacidad\\.html)?$/i.test(page)) continue;
       assert.ok(ids.has(decodeURIComponent(fragment)), `${name}: destino interno inexistente: ${href}`);
     }
   }
