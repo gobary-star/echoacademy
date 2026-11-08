@@ -49,6 +49,27 @@ check("Política CSP presente y restringida", () => {
     assert.match(source, /script-src 'self'/);
   }
 });
+check("Google Maps está permitido de forma limitada por la CSP", () => {
+  assert.match(html, /frame-src[^;]*https:\/\/www\\.google\\.com/);
+  assert.match(html, /<iframe[\\s\\S]*?src="https:\/\/www\\.google\\.com\/maps\\?/);
+  assert.match(privacy, /Google Maps/);
+  assert.match(privacy, /policies\\.google\\.com\/privacy/);
+});
+check("Los enlaces externos que abren otra pestaña están protegidos", () => {
+  for (const source of [html, privacy]) {
+    for (const tag of source.match(/<a\\b[^>]*target="_blank"[^>]*>/gi) || []) {
+      assert.match(tag, /rel="[^"]*noopener[^"]*"/i, "Un enlace target=_blank no incluye rel=noopener");
+    }
+  }
+});
+check("Los enlaces internos apuntan a IDs existentes", () => {
+  for (const source of [html, privacy]) {
+    const ids = new Set([...source.matchAll(/\\bid="([^"]+)"/g)].map((m) => m[1]));
+    for (const href of source.matchAll(/href="#([^"]+)"/g)) {
+      assert.ok(ids.has(href[1]), `Destino interno inexistente: #${href[1]}`);
+    }
+  }
+});
 check("Formulario pide contacto adulto y limita tamaños", () => {
   assert.match(html, /Nombre del padre, madre o tutor/);
   assert.match(html, /id="nombre"[^>]*maxlength="80"/);
