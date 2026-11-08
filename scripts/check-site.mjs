@@ -50,10 +50,16 @@ check("Política CSP presente y restringida", () => {
   }
 });
 check("Google Maps está permitido de forma limitada por la CSP", () => {
-  assert.match(html, /frame-src[^;]*https:\/\/www\.google\.com/);
-  assert.ok(html.includes("<iframe") && html.includes('src="https://www.google.com/maps?'), "No se encontró el mapa incrustado de Google");
+  assert.ok(
+    html.includes("frame-src https://www.google.com https://maps.google.com"),
+    "La CSP debe permitir únicamente los dominios usados por el mapa"
+  );
+  assert.ok(
+    html.includes('src="https://maps.google.com/maps?output=embed&amp;q='),
+    "No se encontró la URL estándar de Google Maps incrustada"
+  );
   assert.match(privacy, /Google Maps/);
-  assert.match(privacy, /policies\.google\.com\/privacy/);
+  assert.ok(privacy.includes("policies.google.com/privacy"));
 });
 check("Los enlaces externos que abren otra pestaña están protegidos", () => {
   for (const source of [html, privacy]) {
@@ -99,7 +105,9 @@ check("Correo y privacidad coinciden con la configuración", () => {
   assert.ok(privacy.includes(match[1]), "La política no coincide con el correo de configuración");
 });
 check("No hay enlaces HTTP inseguros codificados", () => {
-  assert.doesNotMatch(html + privacy + css + js, /http:\/\//i);
+  for (const [name, source] of Object.entries({ html, privacy, css, js })) {
+    assert.ok(!source.includes("http://"), `Se encontró un enlace HTTP sin cifrar en ${name}`);
+  }
 });
 
 console.log(`ECHOTech Academy: ${checks.length}/${checks.length} comprobaciones superadas`);
