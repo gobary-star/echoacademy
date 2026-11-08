@@ -35,10 +35,15 @@ check("IDs HTML únicos", () => {
     assert.equal(ids.length, new Set(ids).size, "Hay IDs duplicados");
   }
 });
-check("No hay JavaScript inline ni manejadores HTML", () => {
-  for (const source of [html, privacy]) {
-    assert.doesNotMatch(source, /<script(?![^>]*\bsrc=)[^>]*>/i);
-    assert.doesNotMatch(source, /\son[a-z]+\s*=/i);
+check("Todos los scripts son externos y no hay manejadores HTML inline", () => {
+  for (const [name, source] of Object.entries({ html, privacy })) {
+    const scripts = [...source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)];
+    for (const script of scripts) {
+      assert.match(script[1], /(?:^|\s)src\s*=/i, name + ": se encontró un script inline");
+      assert.equal(script[2].trim(), "", name + ": un script externo contiene código inline");
+    }
+    assert.doesNotMatch(source, /\son[a-z]+\s*=/i, name + ": se encontró un manejador HTML inline");
+    assert.doesNotMatch(source, /href\s*=\s*["']\s*javascript:/i, name + ": URL javascript: no permitida");
   }
 });
 check("Política CSP presente y restringida", () => {
