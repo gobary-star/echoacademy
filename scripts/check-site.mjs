@@ -51,7 +51,7 @@ check("Política CSP presente y restringida", () => {
 });
 check("Google Maps está permitido de forma limitada por la CSP", () => {
   assert.match(html, /frame-src[^;]*https:\/\/www\.google\.com/);
-  assert.match(html, /<iframe[\s\\S]*?src="https:\/\/www\.google\.com\/maps\\?/);
+  assert.ok(html.includes("<iframe") && html.includes('src="https://www.google.com/maps?'), "No se encontró el mapa incrustado de Google");
   assert.match(privacy, /Google Maps/);
   assert.match(privacy, /policies\.google\.com\/privacy/);
 });
