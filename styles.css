@@ -1596,3 +1596,114 @@ html:not(.js) .hero {
     transition: none;
   }
 }
+
+
+/* Experiencia cercana: más calidez, aire y legibilidad */
+.welcome {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(25,186,240,.10), transparent 28rem),
+    #f7fbff;
+}
+.welcome-intro {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+.welcome-intro h2 {
+  max-width: 680px;
+  margin: 0 auto 16px;
+  color: var(--night);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -.04em;
+}
+.welcome-intro > p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #536a7e;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+.welcome-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 18px;
+}
+.welcome-card {
+  padding: 28px;
+  background: rgba(255,255,255,.92);
+  border: 1px solid #e0ebf4;
+  border-radius: 20px;
+  box-shadow: 0 12px 34px rgba(16,38,61,.06);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.welcome-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(16,38,61,.10);
+}
+.welcome-symbol {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  place-items: center;
+  color: #075b82;
+  background: #dff5ff;
+  border-radius: 14px;
+  font-size: .8rem;
+  font-weight: 850;
+  letter-spacing: .06em;
+}
+.welcome-card h3 {
+  margin-bottom: 9px;
+  color: var(--night);
+  font-size: 1.2rem;
+}
+.welcome-card p {
+  margin: 0;
+  color: #536a7e;
+  line-height: 1.75;
+}
+.hero-tagline {
+  max-width: 620px;
+  text-wrap: balance;
+}
+.hero-desc {
+  max-width: 590px;
+  line-height: 1.8;
+}
+.course-card,
+.team-card,
+.price-card,
+.form-card {
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.course-card:hover,
+.team-card:hover,
+.price-card:hover,
+.form-card:hover {
+  transform: translateY(-3px);
+}
+.section-head p,
+.about .section-head p,
+.contact-text > p {
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .section { padding: 58px 0; }
+  .welcome-card { padding: 23px; }
+  .welcome-intro { margin-bottom: 28px; text-align: left; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-card,
+  .course-card,
+  .team-card,
+  .price-card,
+  .form-card { transition: none; }
+  .welcome-card:hover,
+  .course-card:hover,
+  .team-card:hover,
+  .price-card:hover,
+  .form-card:hover { transform: none; }
+}
