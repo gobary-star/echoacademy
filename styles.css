@@ -1707,3 +1707,25 @@ html:not(.js) .hero {
   .price-card:hover,
   .form-card:hover { transform: none; }
 }
+
+
+/* Contacto directo */
+.contact-email-line {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  overflow-wrap: anywhere;
+}
+.contact-email-line a,
+.footer-links a[href^="mailto:"] {
+  color: #8bdcff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-email-line a:hover,
+.footer-links a[href^="mailto:"]:hover {
+  color: #fff;
+}
