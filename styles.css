@@ -1731,37 +1731,42 @@ html:not(.js) .hero {
 }
 
 
-/* Materiales y ubicación de referencia */
+/* Materiales y ubicación: mapa adaptable en móvil y escritorio */
 .location-section {
   background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
 }
+
 .location-card {
   overflow: hidden;
   border: 1px solid #dce8f2;
   border-radius: 22px;
   background: #fff;
-  box-shadow: 0 16px 42px rgba(16,38,61,.08);
+  box-shadow: 0 16px 42px rgba(16, 38, 61, .08);
 }
+
 .location-map {
-  position: relative;
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 7;
-  min-height: 260px;
+  height: clamp(320px, 48vw, 460px);
+  overflow: hidden;
   background: #e8f0f5;
 }
+
 .location-map iframe {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 260px;
+  min-height: 0;
   border: 0;
 }
+
 .location-details {
   display: flex;
   align-items: flex-start;
   gap: 18px;
   padding: 25px 28px 29px;
 }
+
 .location-pin {
   display: grid;
   flex: 0 0 44px;
@@ -1773,57 +1778,38 @@ html:not(.js) .hero {
   border-radius: 14px;
   font-size: 1.6rem;
 }
+
 .location-details h3 {
   margin: 0 0 5px;
   color: var(--night);
   font-size: 1.25rem;
 }
+
 .location-details p {
   margin: 0 0 10px;
   color: #536a7e;
   line-height: 1.65;
 }
+
 .location-details .location-note {
   margin: 8px 0 18px;
   font-size: .92rem;
 }
-@media (max-width: 600px) {
-  .location-map { aspect-ratio: 4 / 3; min-height: 230px; }
-  .location-details { padding: 21px; gap: 13px; }
-}
 
-
-/* Mapa: tamaño explícito para evitar que el iframe colapse */
-.location-map {
-  position: relative;
-  display: block;
-  width: 100%;
-  min-height: 420px;
-  height: 420px;
-  aspect-ratio: auto;
-  overflow: hidden;
-  background: #e8f0f5;
-}
-.location-map iframe {
-  display: block;
-  width: 100%;
-  height: 420px;
-  min-height: 420px;
-  border: 0;
-}
 .map-fallback {
   margin: 12px 0 0;
   color: #536a7e;
   font-size: .9rem;
   line-height: 1.5;
 }
+
 @media (max-width: 600px) {
   .location-map {
-    height: 360px;
-    min-height: 360px;
+    height: 340px;
   }
-  .location-map iframe {
-    height: 360px;
-    min-height: 360px;
+
+  .location-details {
+    gap: 13px;
+    padding: 21px;
   }
 }
